@@ -1,0 +1,27 @@
+@font-face {
+    font-family: "cinema";
+    src: url("../fonts/cinema_st.ttf");
+}
+
+.contenedor{
+    position: relative;
+    display: block;
+    
+}
+.encima{
+    
+    font-family: "cinema";
+    font-size: 5vw;
+    position: absolute;
+    top: 20%;
+    left: 60%;
+}
+.abajo{
+    
+    font-family: "cinema";
+    font-size: 5vw;
+    position: absolute;
+    top: 35%;
+    left: 55%;
+    
+}

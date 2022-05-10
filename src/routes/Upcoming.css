@@ -1,0 +1,48 @@
+.btn:hover{
+    color: rgb(0, 0, 0) !important;
+    background-color: gold;
+}
+.finder{    
+    font-size: 1.3em;
+    border-style: solid;
+    border-width: 2px;
+    border-radius: 15px !important;
+}
+
+.flexi{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.page-non-button{
+    opacity: 0;
+}
+.current{
+    border-radius: 50% !important;
+    background-color: whitesmoke !important;
+    color:black !important
+}
+
+.page-link{
+    margin-right: .5em;
+    border-radius: 5px;
+    transition: transform .25s;
+}
+.page-link:hover{   
+    background-color: gold !important;
+    color:black !important;
+}
+/* .page-link:active{
+    transform: scale(1.2);
+} */
+
+.finder{
+    color: goldenrod;
+    border-radius: 7px;
+}
+
+.card{
+    border-radius: 7px;
+}
+
+
