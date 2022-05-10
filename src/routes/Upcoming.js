@@ -30,9 +30,9 @@ export default function Upcoming() {
             <div className="row row-cols-1 row-cols-md-2 row-cols-xl-3 justify-content-around">
                 {upcomingArray.map(movie => <Card key={movie.id} movie={movie} />)}
             </div>
-            <div className="flexi">
+            {/* <div className="flexi">
                 <Pagination upcomingPages={upcomingPages} setUpcomingArray={setUpcomingArray} />
-            </div>
+            </div> */}
         </div>
     )
 }

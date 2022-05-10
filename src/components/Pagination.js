@@ -1,14 +1,22 @@
 import { PAGINATION_URL } from "../Settings";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import "../routes/Upcoming.css";
 
 export default function Pagination({ upcomingPages, setUpcomingArray }) {
 
-    const [pageNumber, setPageNumber] = useState(1);
+    const [currentPage, setCurrentPage] = useState(1);
+
+    useEffect(() => {
+        fetch(`${PAGINATION_URL}${currentPage}`)
+            .then(response => response.json())
+            .then(data => {
+                setUpcomingArray(data.results);
+            })
+    }, [currentPage])
 
     function paginationPages() {
         let pagination = [];
-        for (let page = pageNumber - 2; page <= pageNumber + 2; page++) {
+        for (let page = currentPage - 2; page <= currentPage + 2; page++) {
             if (page < 1 || page > upcomingPages) {
                 pagination.push("");
 
@@ -19,36 +27,17 @@ export default function Pagination({ upcomingPages, setUpcomingArray }) {
         return pagination;
     };
 
-    function goToPage(page) {
-        fetch(`${PAGINATION_URL}${page}`)
-            .then(response => response.json())
-            .then(data => {
-                setUpcomingArray(data.results);
-                setPageNumber(page);
-            })
-    };
-
-    function previous(pageNumber) {
-        if (pageNumber > 1) {
-            fetch(`${PAGINATION_URL}${pageNumber - 1}`)
-                .then(response => response.json())
-                .then(data => {
-                    setUpcomingArray(data.results);
-                    setPageNumber(pageNumber - 1);
-                });
+    function previous(currentPage) {
+        if (currentPage > 1) {
+            setCurrentPage(currentPage - 1);
         } else {
             alert("Ya estás en la primera página");
         }
     };
 
-    function next(pageNumber) {
-        if (pageNumber < upcomingPages) {
-            fetch(`${PAGINATION_URL}${pageNumber + 1}`)
-                .then(response => response.json())
-                .then(data => {
-                    setUpcomingArray(data.results);
-                    setPageNumber(pageNumber + 1);
-                })
+    function next(currentPage) {
+        if (currentPage < upcomingPages) {
+            setCurrentPage(currentPage + 1);
         } else {
             alert("Ya no hay más resultados");
         }
@@ -58,7 +47,7 @@ export default function Pagination({ upcomingPages, setUpcomingArray }) {
         <div>
             <ul className="pagination my-5">
                 <li className="page-item">
-                    <button className="page-link bg-dark text-warning" onClick={() => previous(pageNumber)}>
+                    <button className="page-link bg-dark text-warning" onClick={() => previous(currentPage)}>
                         Previous
                     </button>
                 </li>
@@ -69,22 +58,22 @@ export default function Pagination({ upcomingPages, setUpcomingArray }) {
                                 <button className="page-link bg-warning text-warning" >{0}</button>
                             </li>
                         )
-                    } else if (element === pageNumber) {
+                    } else if (element === currentPage) {
                         return (
-                            <li key={element} onClick={() => goToPage(element)} >
+                            <li key={element} onClick={() => setCurrentPage(element)} >
                                 <button className="page-link current" >{element}</button>
                             </li>
                         )
                     } else {
                         return (
-                            <li key={element} onClick={() => goToPage(element)} >
+                            <li key={element} onClick={() => setCurrentPage(element)} >
                                 <button className="page-link bg-dark text-warning" >{element}</button>
                             </li>
                         )
                     }
                 })}
                 <li className="page-item">
-                    <button className="page-link bg-dark text-warning" onClick={() => next(pageNumber)}>
+                    <button className="page-link bg-dark text-warning" onClick={() => next(currentPage)}>
                         Next
                     </button>
                 </li>

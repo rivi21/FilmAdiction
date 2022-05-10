@@ -24,7 +24,7 @@ export default function Footer() {
                 <ul>
                     <h3 className="">Created by</h3>
                     <li className="pb-1"><span>Javier Rivas Navarro</span></li>
-                    <li><span>December, 2021</span></li>
+                    <li><span>January, 2022</span></li>
                 </ul>
             </div>
             <div className="footer-contact text-end pt-4 pe-5">
