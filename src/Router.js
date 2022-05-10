@@ -14,7 +14,7 @@ export default function Router() {
             <BrowserRouter>
                 <NavBar />
                 <Routes>
-                    <Route exact path="/" element={<Landing />} />
+                    <Route exact path="/Filmadiction" element={<Landing />} />
                     <Route path="/upcoming" element={<Upcoming />} />
                     <Route path="/Details/:filmID" element={<Details />} />
                     <Route element={<Error />} />
