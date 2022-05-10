@@ -12,7 +12,7 @@ export default function Pagination({ upcomingPages, setUpcomingArray }) {
             .then(data => {
                 setUpcomingArray(data.results);
             })
-    }, [currentPage])
+    }, [currentPage, setUpcomingArray])
 
     function paginationPages() {
         let pagination = [];
