@@ -13,7 +13,7 @@ const IMDB_TITLE_URL = "https://www.imdb.com/title/";
 
 const IMDB_URL = "https://www.imdb.com/";
 const THE_MOVIEDB_URL = "https://www.themoviedb.org";
-const GITHUB_REPO = "https://github.com/rivi21/react-app-FilmAdiction";
+const GITHUB_REPO = "https://github.com/rivi21/FilmAdiction";
 const GITHUB_ICON = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS08qeDPzI-5zcgKBDixjKaPu5t2J-6co2Nqa9qMxUtNLjURxfDUOKJdAnZZZUreT3nE4k&usqp=CAU";
 const LINKEDIN = "https://www.linkedin.com/in/javier-rivas-navarro/";
 const LINKEDIN_LOGO = "https://e7.pngegg.com/pngimages/600/60/png-clipart-computer-icons-linkedin-social-media-social-media-angle-text.png";
