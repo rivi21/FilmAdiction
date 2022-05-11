@@ -24,9 +24,11 @@ export default function Details() {
                 <h2 className="tagline">{movieDetails.tagline}</h2>
                 <div>
                     <h3 className="pb-3">Genres: </h3>
-                    {movieDetails.genres?.map(genre => {
-                        return <span className="genre text-warning bg-dark ms-3 px-3 py-2" key={genre.name}>{genre.name}</span>
-                    })}
+                    <div className="genres">
+                        {movieDetails.genres?.map(genre => {
+                            return <span className="genre text-warning bg-dark ms-3 px-3 py-2" key={genre.name}>{genre.name}</span>
+                        })}
+                    </div>
                 </div>
                 <div>
                     <h3><strong>Overview: </strong></h3>
