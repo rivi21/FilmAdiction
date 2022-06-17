@@ -1,16 +1,16 @@
 {
   "files": {
     "main.css": "/FilmAdiction/static/css/main.3b439399.css",
-    "main.js": "/FilmAdiction/static/js/main.ab28ad75.js",
+    "main.js": "/FilmAdiction/static/js/main.6b9b340f.js",
     "static/media/Hollywood1.ttf": "/FilmAdiction/static/media/Hollywood1.1bb75d2380258252f509.ttf",
     "static/media/cinema_st.ttf": "/FilmAdiction/static/media/cinema_st.2d53c4741ed42e8af11a.ttf",
     "static/media/Hollywood2.ttf": "/FilmAdiction/static/media/Hollywood2.f49ae1b7b2280e2dfd01.ttf",
     "index.html": "/FilmAdiction/index.html",
     "main.3b439399.css.map": "/FilmAdiction/static/css/main.3b439399.css.map",
-    "main.ab28ad75.js.map": "/FilmAdiction/static/js/main.ab28ad75.js.map"
+    "main.6b9b340f.js.map": "/FilmAdiction/static/js/main.6b9b340f.js.map"
   },
   "entrypoints": [
     "static/css/main.3b439399.css",
-    "static/js/main.ab28ad75.js"
+    "static/js/main.6b9b340f.js"
   ]
 }
