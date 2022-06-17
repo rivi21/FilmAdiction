@@ -10,6 +10,7 @@ export default function Upcoming() {
 
     const [upcomingArray, setUpcomingArray] = useState([]);
     const [upcomingPages, setUpcomingPages] = useState(0);
+    const [currentPage, setCurrentPage] = useState(1);
 
     useEffect(() => {
         fetch(UPCOMING_URL)
@@ -25,14 +26,24 @@ export default function Upcoming() {
             <div className="flexi">
                 <h1 className="mb-5">Upcoming Movies</h1>
                 <Search setUpcomingArray={setUpcomingArray} />
-                <Pagination upcomingPages={upcomingPages} setUpcomingArray={setUpcomingArray} />
+                <Pagination 
+                    upcomingPages={upcomingPages} 
+                    setUpcomingArray={setUpcomingArray}
+                    currentPage={currentPage}
+                    setCurrentPage={setCurrentPage} 
+                />
             </div>
             <div className="row row-cols-1 row-cols-md-2 row-cols-xl-3 justify-content-around">
                 {upcomingArray.map(movie => <Card key={movie.id} movie={movie} />)}
             </div>
-            {/* <div className="flexi">
-                <Pagination upcomingPages={upcomingPages} setUpcomingArray={setUpcomingArray} />
-            </div> */}
+            <div className="flexi">
+            <Pagination 
+                    upcomingPages={upcomingPages} 
+                    setUpcomingArray={setUpcomingArray}
+                    currentPage={currentPage}
+                    setCurrentPage={setCurrentPage} 
+                />
+            </div>
         </div>
     )
 }

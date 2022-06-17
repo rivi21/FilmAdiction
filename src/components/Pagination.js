@@ -2,9 +2,11 @@ import { PAGINATION_URL } from "../Settings";
 import { useState, useEffect } from "react";
 import "../routes/Upcoming.css";
 
-export default function Pagination({ upcomingPages, setUpcomingArray }) {
-
-    const [currentPage, setCurrentPage] = useState(1);
+export default function Pagination({ 
+    upcomingPages, 
+    setUpcomingArray,
+    currentPage,
+    setCurrentPage }) {
 
     useEffect(() => {
         fetch(`${PAGINATION_URL}${currentPage}`)
